@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= pageTitle %>></title>
+  </head>
+  <body>
+    <h1>Welcome to contact Page</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home Page</a></li>
+        <li><a href="/login">login Page</a></li>
+      </ul>
+    </nav>
+    <section>
+      <form method="POST" action="/create">
+        <input type="text" placeholder="user name" name="username" />
+        <input type="password" placeholder="password" name="password" />
+        <input
+          type="password"
+          placeholder="confirm password"
+          name="confirmPassword"
+        />
+        <input type="hidden" name="_csrf" value="<%=csrfToken %>" />
+        <button type="submit">Create</button>
+      </form>
+      <% if(errorMessage){ %> <% for( error of errorMessage) { %>
+      <p><%=error.msg %></p>
+      <% } %> <% } %>
+    </section>
+  </body>
+</html>

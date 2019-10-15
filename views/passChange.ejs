@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= pageTitle %>></title>
+  </head>
+  <body>
+    <h1>Welcome to Home Page</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home Page</a></li>
+        <li><a href="/login">login Page</a></li>
+        <li><a href="/create">Create Account Page</a></li>
+      </ul>
+    </nav>
+    <section>
+      <form method="POST" action="/passChange">
+        <input type="text" placeholder="user name" name="username" />
+        <input type="password" placeholder="password" name="password" />
+        <input type="password" placeholder=" New password" name="newPassword" />
+        <input
+          type="password"
+          placeholder=" Repeat new password"
+          name="repeatPassword"
+        />
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button type="submit">Change Password</button>
+      </form>
+      <% if(errorMessage){ %> <% for( error of errorMessage) { %>
+      <p><%=error.msg %></p>
+      <% } %> <% } %>
+      <p>
+        Don't have account yet ? Create account here:<a href="/create"
+          >Create Account</a
+        >
+      </p>
+    </section>
+  </body>
+</html>

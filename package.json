@@ -1,0 +1,40 @@
+{
+  "name": "classic_ssr",
+  "version": "0.1.0",
+  "description": "classic ssr website with express",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon ./index.ts"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ssr"
+  ],
+  "author": "Martin Merta",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.17.0",
+    "@types/connect-mongodb-session": "0.0.1",
+    "@types/csurf": "^1.9.35",
+    "@types/ejs": "^2.6.3",
+    "@types/express": "^4.17.0",
+    "@types/express-session": "^1.15.14",
+    "@types/express-validator": "^3.0.0",
+    "@types/helmet": "0.0.44",
+    "@types/mongodb": "^3.2.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-mongodb-session": "^2.2.0",
+    "csurf": "^1.10.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "express-validator": "^6.1.1",
+    "helmet": "^3.20.1",
+    "mongodb": "^3.3.0",
+    "nodemon": "^1.19.1"
+  }
+}

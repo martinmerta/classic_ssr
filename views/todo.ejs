@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title><%= pageTitle %>></title>
+  </head>
+  <body>
+    <h1>Welcome to about Page</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home Page</a></li>
+        <li><a href="/doneTasks">Done tasks Page</a></li>
+        <li><a href="/passChange">Change Password</a></li>
+        <li><a href="/logout">logout</a></li>
+      </ul>
+    </nav>
+    <form method="POST" action="/saveTask">
+      <input type="text" name="task" placeholder="write task here" />
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <button type="submit">Submit Task</button>
+    </form>
+    <% if(tasks) { %>
+    <section>
+      <% for( let [index, task] of tasks.entries()){ %>
+      <p><%=task %></p>
+      <a href="/updateTasks?task=<%=index %>">Move to done Tasks</a>
+      <% } %>
+    </section>
+    <% } %>
+  </body>
+</html>
